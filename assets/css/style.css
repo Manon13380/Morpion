@@ -1,0 +1,262 @@
+@font-face {
+    font-family: moccha;
+    src: url(../font/MochaFrappuccino-Bold.ttf);
+}
+
+body {
+    font-family: moccha;
+    background-image: url(../images/anime-7822082_960_720.jpg);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: 15%;
+    -webkit-text-stroke: 1px rgb(127, 128, 129);
+}
+
+header {
+    text-align: center;
+    font-size: 35px;
+}
+
+h1 {
+    color: aliceblue;
+    background-color: rgba(240, 248, 255, 0.178);
+    margin: 0 200px 0 200px;
+
+
+}
+
+.row {
+    display: flex;
+    align-items: center;
+
+}
+
+#twoPlayers,
+#vsBot {
+    display: none;
+}
+
+#restart {
+    display: none;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 90px;
+}
+
+.game {
+    height: 500px;
+    width: 500px;
+    background-color: rgba(240, 248, 255, 0.178);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.game p {
+    display: none;
+    margin-bottom: 50px;
+    margin-top: 0;
+    font-size: 50px;
+    color: rgb(110, 178, 237);
+}
+
+.button {
+    font-family: moccha;
+    font-size: 30px;
+    display: block;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid rgba(240, 248, 255, 0.419);
+    color: rgb(187, 213, 236);
+    cursor: pointer;
+}
+
+.cell {
+    display: flex;
+    border: 1px solid rgba(240, 248, 255, 0.419);
+    border-collapse: collapse;
+    height: 100px;
+    width: 100px;
+    line-height: 150px;
+}
+
+.cell:hover {
+    background-color: rgba(240, 248, 255, 0.332);
+}
+
+.gameContainer {
+    position: relative;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 15px;
+}
+footer img {
+    height: 60px;
+    width: 60px;
+}
+footer p {
+    font-size: 25px;
+    color: aliceblue;
+}
+
+.win-vert-left:after {
+    content: '';
+    width: 5px;
+    height: 100%;
+    background-color: aliceblue;
+    position: absolute;
+    bottom: 0;
+    left: calc(100px / 2)
+}
+
+.win-vert-center:after {
+    content: '';
+    width: 5px;
+    height: 100%;
+    background-color: aliceblue;
+    position: absolute;
+    bottom: 0;
+    left: calc(100px * 3 / 2)
+}
+
+.win-vert-right:after {
+    content: '';
+    width: 5px;
+    height: 100%;
+    background-color: aliceblue;
+    position: absolute;
+    bottom: 0;
+    right: calc(100px / 2)
+}
+
+.win-diag-right:after {
+    content: '';
+    width: 5px;
+    height: calc(100% + 100px);
+    background-color: aliceblue;
+    position: absolute;
+    bottom: -50px;
+    left: calc(100px * 3 / 2);
+    transform: translateY(0) rotate(45deg);
+
+}
+
+.win-diag-left:after {
+    content: '';
+    width: 5px;
+    height: calc(100% + 100px);
+    background-color: aliceblue;
+    position: absolute;
+    bottom: -50px;
+    left: calc(100px * 3 / 2);
+    transform: translateY(0) rotate(-45deg);
+
+}
+
+.win-hor-center:after {
+    content: '';
+    width: 5px;
+    height: 100%;
+    background-color: aliceblue;
+    position: absolute;
+    bottom: 0;
+    left: 150px;
+    transform: translateY(0) rotate(90deg);
+}
+
+.win-hor-top:after {
+    content: '';
+    width: 5px;
+    height: 100%;
+    background-color: aliceblue;
+    position: absolute;
+    bottom: 100px;
+    left: 150px;
+    transform: translateY(0) rotate(90deg);
+}
+
+.win-hor-bottom:after {
+    content: '';
+    width: 5px;
+    height: 100%;
+    background-color: aliceblue;
+    position: absolute;
+    bottom: -100px;
+    left: 150px;
+    transform: translateY(0) rotate(90deg);
+}
+
+@media (max-width: 714px) {
+    h1 {
+        background-color: transparent;
+    }
+}
+
+@media (max-width: 671px) {
+    .game p {
+        text-align: center;
+    }
+}
+
+@media (max-width: 649px) {
+    header {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 350px) {
+    .cell {
+        height: 90px;
+        width: 90px;
+    }
+    .win-vert-left:after {
+        left: calc(90px / 2)
+    }
+    
+    .win-vert-center:after {
+        left: calc(90px * 3 / 2)
+    }
+    
+    .win-vert-right:after {
+        right: calc(90px / 2)
+    }
+    
+    .win-diag-right:after { 
+        left: calc(90px * 3 / 2);
+    }
+    
+    .win-diag-left:after {
+        bottom: -50px;
+        left: calc(90px * 3 / 2);
+    }
+    
+    .win-hor-center:after {
+        bottom: 10;
+        left: 135px;
+    }
+    
+    .win-hor-top:after {
+        left: 135px;
+    }
+    
+    .win-hor-bottom:after {
+        bottom: -90px;
+        left: 135px;
+    }
+}
